@@ -53,7 +53,9 @@ fun SettingsScreen(
 @Composable
 fun SettingsScreenContent(
   modifier: Modifier = Modifier,
-  uiState: SettingsUiState,
+  val uiState by viewModel.uiState.collectAsState(
+initial = SettingsUiState(false)
+)
   onLoginClick: () -> Unit,
   onSignUpClick: () -> Unit,
   onSignOutClick: () -> Unit,
