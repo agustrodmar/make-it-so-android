@@ -1,5 +1,5 @@
 /*
-Copyright 2022 Google LLC
+Copyright 2023 Google LLC
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -14,14 +14,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
  */
 
-package com.example.makeitso.model.service
+package com.example.makeitso.screens.stats
 
-import com.google.firebase.perf.trace
-import com.google.firebase.perf.metrics.Trace
-
-/**
- * Trace a block with Firebase performance.
- *
- * Supports both suspend and regular methods.
- */
-inline fun <T> trace(name: String, block: Trace.() -> T): T = Trace.create(name).trace(block)
+data class StatsUiState(
+    val completedTasksCount: Int = 0,
+    val importantCompletedTasksCount: Int = 0,
+    val mediumHighTasksToCompleteCount: Int = 0
+)

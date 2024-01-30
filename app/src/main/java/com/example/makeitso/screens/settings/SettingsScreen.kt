@@ -40,9 +40,7 @@ fun SettingsScreen(
   openScreen: (String) -> Unit,
   viewModel: SettingsViewModel = hiltViewModel()
 ) {
-  val uiState by viewModel.uiState.collectAsState(
-    initial = SettingsUiState(false)
-  )
+  val uiState by viewModel.uiState.collectAsState(initial = SettingsUiState(false))
 
   SettingsScreenContent(
     uiState = uiState,
